@@ -4,7 +4,7 @@ export default function Footer() {
             <div className="flex h-full items-center pl-4 gap-2">
                 <a className="underline decoration-dashed" href="https://github.com/andreibegu/appiedle">Github</a>
                 <p>●</p>
-                <a className="underline decoration-dashed" href="https://www.checkjebon.nl/">Price source</a>
+                <a className="underline decoration-dashed" href="https://paypal.me/andreibegu">Donate</a>
             </div>
         </footer>
     )
