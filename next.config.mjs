@@ -9,7 +9,7 @@ const nextConfig = {
                 pathname: '/dam/product/**',
             },
         ],
-    },
+    }
 };
 
 export default nextConfig;

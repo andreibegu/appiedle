@@ -13,7 +13,7 @@ export default function GuessList() {
 
 function Guess() {
     return (
-        <div className="w-80 h-6 bg-blue-50 border-solid border-2 border-blue-100 rounded-sm">
+        <div className="w-80 h-7 bg-blue-50 border-solid border-2 border-blue-100 rounded-sm">
 
         </div>
     )
