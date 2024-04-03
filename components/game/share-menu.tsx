@@ -42,7 +42,7 @@ async function handleShare(gameState: GameState) {
         result += color + arrow + " ";
     });
 
-    if (navigator.canShare() && isMobile(navigator.userAgent)) {
+    if (isMobile(navigator.userAgent)) {
         navigator.share({
             title: "Appiedle",
             text: result,

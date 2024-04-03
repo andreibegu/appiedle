@@ -8,12 +8,18 @@ const data: Product[] = JSON.parse(await fs.readFile(path.join(process.cwd(), 'p
 const startDate = new Date("03/12/2024")
 
 export async function getCurrentProduct() {
+    const daysPassed = await getCurrentGame();
+
+    const game = data[daysPassed % data.length];
+    return game;
+}
+
+export async function getCurrentGame() {
     const currentDate = new Date();
     const timeDiff = currentDate.getTime() - startDate.getTime();
     const daysPassed = Math.floor(timeDiff / (1000 * 3600 * 24));
 
-    const game = data[daysPassed % data.length];
-    return game;
+    return daysPassed;
 }
 
 export async function submitGuess(price: number) {
