@@ -61,7 +61,7 @@ function GuessIndicator({ closeness, direction }: IndicatorProps) {
     }
 
     return (
-        <div className={clsx(`w-15 pl-6 pr- h-8 border-solid border-2 rounded-sm flex items-center justify-center`,
+        <div className={clsx(`w-15 pl-6 pr-6 h-8 border-solid border-2 rounded-sm flex items-center justify-center`,
             {
                 'bg-green-50 border-green-100 text-green-400': closeness == 'win',
                 'bg-red-50 border-red-100 text-red-400': closeness == 'far',
