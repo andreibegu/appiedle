@@ -1,5 +1,6 @@
 import { GameState } from "@/lib/definitions";
 import { Button } from "../ui/button";
+import { isMobile } from "@/lib/util";
 
 interface ShareProps {
     gameState: GameState;
@@ -48,6 +49,7 @@ async function handleShare(gameState: GameState) {
         url: window.location.href
     }
 
+    console.log(navigator.userAgent);
     if (navigator.canShare(data) && isMobile(navigator.userAgent)) {
         await navigator.share(data);
     } else {
