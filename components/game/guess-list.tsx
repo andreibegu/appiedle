@@ -8,8 +8,8 @@ interface GuessListProps {
 export default function GuessList({ gameState }: GuessListProps) {
     return (
         <div className="flex flex-col gap-2">
-            {gameState.guesses.map((guess) => {
-                return !guess ? <BlankGuessRow /> : <GuessRow guess={guess} />;
+            {gameState.guesses.map((guess, idx) => {
+                return !guess ? <BlankGuessRow key={idx} /> : <GuessRow key={idx} guess={guess} />;
             })}
         </div>
     )
