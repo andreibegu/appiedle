@@ -9,13 +9,13 @@ export default function GuessList({ gameState }: GuessListProps) {
     return (
         <div className="flex flex-col gap-2">
             {gameState.guesses.map((guess) => {
-                return !guess ? <BlankGuess /> : <Guess guess={guess} />;
+                return !guess ? <BlankGuessRow /> : <GuessRow guess={guess} />;
             })}
         </div>
     )
 }
 
-function BlankGuess() {
+function BlankGuessRow() {
     return (
         <div className="w-80 h-8 bg-blue-50 border-solid border-2 border-blue-100 rounded-sm"></div>
     )
@@ -25,7 +25,7 @@ interface GuessProps {
     guess: Guess;
 }
 
-function Guess({ guess }: GuessProps) {
+function GuessRow({ guess }: GuessProps) {
     return (
         <div className="flex justify-between flex-row w-80 h-8 gap-2">
             <div className="flex w-full h-8 text-sky-800 font-bold bg-blue-50 justify-center items-center border-solid border-2 border-blue-100 rounded-sm">
@@ -61,7 +61,7 @@ function GuessIndicator({ closeness, direction }: IndicatorProps) {
     }
 
     return (
-        <div className={clsx(`w-15 pl-6 pr-6 h-8 border-solid border-2 rounded-sm flex items-center justify-center`,
+        <div className={clsx(`w-15 pl-6 pr- h-8 border-solid border-2 rounded-sm flex items-center justify-center`,
             {
                 'bg-green-50 border-green-100 text-green-400': closeness == 'win',
                 'bg-red-50 border-red-100 text-red-400': closeness == 'far',
