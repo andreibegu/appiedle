@@ -9,6 +9,7 @@ export type Product = {
 export type GameState = {
     guesses: (Guess | undefined)[],
     won: boolean,
+    gameOver: boolean
 }
 
 export type Guess = {

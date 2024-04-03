@@ -1,15 +1,17 @@
 'use client'
 
 import { useState } from "react";
-import GuessList from "./guesslist";
+import GuessList from "./guess-list";
 import Submission from "./submission";
-import { GameState, Guess } from "@/lib/definitions";
+import { GameState, Guess } from "@/lib/definitions";;
+import ShareMenu from "./share-menu";
 
 export default function Game() {
     const [gameState, setGameState] = useState<GameState>({
         guesses: [undefined, undefined, undefined,
             undefined, undefined, undefined],
-        won: false
+        won: false,
+        gameOver: false
     });
 
     const addGuess = (newGuess: Guess) => {
@@ -22,14 +24,16 @@ export default function Game() {
 
         setGameState({
             guesses: updatedGuesses,
-            won: newGuess.closeness == 'win'
+            won: newGuess.closeness == 'win',
+            gameOver: index == updatedGuesses.length - 1
         });
     };
 
     return (
         <div className="flex flex-col h-full justify-center items-center gap-5">
             <GuessList gameState={gameState!} />
-            <Submission onAddGuess={addGuess} />
+            {(!gameState.gameOver && !gameState.won) ? <Submission onAddGuess={addGuess} />
+                : <ShareMenu gameState={gameState} />}
         </div>
-    )
+    );
 }
