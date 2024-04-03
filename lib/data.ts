@@ -2,8 +2,9 @@
 
 import { promises as fs } from 'fs'
 import { Guess, Product } from './definitions';
+import path from 'path';
 
-const data: Product[] = JSON.parse(await fs.readFile(process.cwd() + '/public/products.json', 'utf8'));
+const data: Product[] = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', 'products.json'), 'utf8'));
 const startDate = new Date("03/12/2024")
 
 export async function getCurrentProduct() {
