@@ -27,7 +27,11 @@ interface GuessProps {
 
 function GuessRow({ guess }: GuessProps) {
     return (
-        <div className="flex justify-between flex-row w-80 h-8 gap-2">
+        <div className={clsx("flex justify-between flex-row w-80 h-8 gap-2",
+            {
+                "animate-shake": guess.direction != 'none',
+                "animate-jump": guess.direction == 'none'
+            })}>
             <div className="flex w-full h-8 text-sky-800 font-bold bg-blue-50 justify-center items-center border-solid border-2 border-blue-100 rounded-sm">
                 {guess.price.toFixed(2)} €
             </div>
