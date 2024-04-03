@@ -1,12 +1,17 @@
 import { submitGuess } from "@/lib/data";
 import { Button } from "../ui/button";
+import { Guess } from "@/lib/definitions";
 
-export default function Submission() {
+interface SubmissionProps {
+    onAddGuess: (guess: Guess) => void;
+}
+
+export default function Submission({ onAddGuess }: SubmissionProps) {
     return (
         <form action={async (formData: FormData) => {
             const price = Number(formData.get('price'));
             const guess = await submitGuess(price);
-            console.log(guess);
+            onAddGuess(guess);
         }} className="flex items-center justify-center gap-2">
             <div className="flex rounded-lg bg-blue-500">
                 <input

@@ -1,18 +1,15 @@
 import { GameState } from "@/lib/definitions"
 
-type GuessProps = {
+interface GuessListProps {
     gameState: GameState
 }
 
-export default function GuessList() {
+export default function GuessList({ gameState }: GuessListProps) {
     return (
         <div className="flex flex-col gap-2">
-            <Guess></Guess>
-            <Guess></Guess>
-            <Guess></Guess>
-            <Guess></Guess>
-            <Guess></Guess>
-            <Guess></Guess>
+            {gameState.guesses.map((guess) => {
+                return <Guess />
+            })}
         </div>
     )
 }
