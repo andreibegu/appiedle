@@ -19,6 +19,7 @@ export default function Submission({ onAddGuess }: SubmissionProps) {
                     type="number"
                     name="price"
                     placeholder="1.00"
+                    step="0.01"
                     required
                 />
                 <div className="flex items-center text-white pl-2 pr-2">
