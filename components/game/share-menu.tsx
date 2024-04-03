@@ -42,12 +42,14 @@ async function handleShare(gameState: GameState) {
         result += color + arrow + " ";
     });
 
-    if (isMobile(navigator.userAgent)) {
-        navigator.share({
-            title: "Appiedle",
-            text: result,
-            url: window.location.href
-        });
+    const data = {
+        title: "Appiedle",
+        text: result,
+        url: window.location.href
+    }
+
+    if (navigator.canShare(data) && isMobile(navigator.userAgent)) {
+        await navigator.share(data);
     } else {
         result += ' - ' + window.location.href;
         navigator.clipboard.writeText(result);
