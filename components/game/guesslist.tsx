@@ -1,3 +1,9 @@
+import { GameState } from "@/lib/definitions"
+
+type GuessProps = {
+    gameState: GameState
+}
+
 export default function GuessList() {
     return (
         <div className="flex flex-col gap-2">
