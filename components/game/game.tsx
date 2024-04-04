@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from "react";
 import GuessList from "./guess-list";
 import Submission from "./submission";
 import { GameState, Guess } from "@/lib/definitions";;
 import ShareMenu from "./share-menu";
+import useLocalStorage from "@/lib/useLocalStorage";
 
 export default function Game() {
-    const [gameState, setGameState] = useState<GameState>({
+    const [gameState, setGameState] = useLocalStorage<GameState>("gamestate", {
         guesses: [undefined, undefined, undefined,
             undefined, undefined, undefined],
         won: false,
