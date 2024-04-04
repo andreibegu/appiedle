@@ -2,21 +2,21 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 
 export default function useLocalStorage<T>(
     key: string,
-    defaultValue: T
+    defaultValue: T,
+    currentId: string
 ): [T, Dispatch<SetStateAction<T>>] {
     const isMounted = useRef(false)
     const [value, setValue] = useState<T>(defaultValue)
 
-    const currentDay = new Date().getDay().toString();
-
     useEffect(() => {
         try {
             const item = window.localStorage.getItem(key);
-            const day = window.localStorage.getItem(key + 'day');
-            if (item && day == currentDay) {
+            const id = window.localStorage.getItem(key + 'id');
+            if (item && id == currentId) {
                 setValue(JSON.parse(item))
             } else {
                 window.localStorage.removeItem(key);
+                window.localStorage.setItem(key + 'id', currentId);
             }
         } catch (e) {
             console.log(e);
@@ -29,7 +29,7 @@ export default function useLocalStorage<T>(
     useEffect(() => {
         if (isMounted.current) {
             window.localStorage.setItem(key, JSON.stringify(value));
-            window.localStorage.setItem(key + 'day', currentDay);
+            window.localStorage.setItem(key + 'id', currentId);
         } else {
             isMounted.current = true;
         }

@@ -6,13 +6,17 @@ import { GameState, Guess } from "@/lib/definitions";;
 import ShareMenu from "./share-menu";
 import useLocalStorage from "@/lib/useLocalStorage";
 
-export default function Game() {
+interface GameProps {
+    id: number
+}
+
+export default function Game({ id }: GameProps) {
     const [gameState, setGameState] = useLocalStorage<GameState>("gamestate", {
         guesses: [undefined, undefined, undefined,
             undefined, undefined, undefined],
         won: false,
         gameOver: false
-    });
+    }, id.toString());
 
     const addGuess = (newGuess: Guess) => {
         const updatedGuesses: (Guess | undefined)[] = [...gameState.guesses];
