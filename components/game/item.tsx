@@ -1,10 +1,13 @@
 import { AspectRatio } from "@/components/ui/aspectratio"
 import { getCurrentProduct } from "@/lib/data";
+import { Product } from "@/lib/definitions";
 import Image from "next/image";
 
-export default async function Item() {
-    const product = await getCurrentProduct();
+interface ItemProps {
+    product: Product;
+}
 
+export default async function Item({ product }: ItemProps) {
     return (
         <div className="flex flex-col justify-center items-center w-auto gap-2 bg-blue-50 pt-4 pb-4 pl-8 pr-8 rounded-md border-solid border-2 border-blue-100">
             <div className="w-56">

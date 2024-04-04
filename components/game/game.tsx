@@ -7,10 +7,11 @@ import ShareMenu from "./share-menu";
 import useLocalStorage from "@/lib/useLocalStorage";
 
 interface GameProps {
-    id: number
+    id: number;
+    price: number;
 }
 
-export default function Game({ id }: GameProps) {
+export default function Game({ id, price }: GameProps) {
     const [gameState, setGameState] = useLocalStorage<GameState>("gamestate", {
         guesses: [undefined, undefined, undefined,
             undefined, undefined, undefined],
@@ -37,7 +38,7 @@ export default function Game({ id }: GameProps) {
         <div className="flex flex-col h-full justify-center items-center gap-5">
             <GuessList gameState={gameState!} />
             {(!gameState.gameOver && !gameState.won) ? <Submission onAddGuess={addGuess} />
-                : <ShareMenu gameState={gameState} />}
+                : <ShareMenu gameState={gameState} price={price} />}
         </div>
     );
 }
