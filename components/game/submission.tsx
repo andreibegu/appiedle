@@ -13,9 +13,9 @@ export default function Submission({ onAddGuess }: SubmissionProps) {
             const guess = await submitGuess(price);
             onAddGuess(guess);
         }} className="flex items-center justify-center gap-2">
-            <div className="flex rounded-lg bg-blue-500">
+            <div className="flex rounded-lg bg-appie-500">
                 <input
-                    className="block w-20 rounded-md border-2 border-blue-500 py-[9px] pl-2 text-sm outline-2 placeholder:text-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-blue-500"
+                    className="block w-20 rounded-md border-2 border-appie-500 py-[9px] pl-2 text-sm outline-2 placeholder:text-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-appie-500"
                     type="number"
                     name="price"
                     placeholder="1.00"

@@ -8,6 +8,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'appie': {
+          '50': '#eff9ff',
+          '100': '#def3ff',
+          '200': '#b6e8ff',
+          '300': '#75d8ff',
+          '400': '#2cc5ff',
+          '500': '#00a0e3',
+          '600': '#008bd4',
+          '700': '#006fab',
+          '800': '#005d8d',
+          '900': '#064e74',
+          '950': '#04314d',
+        },
+
+      },
       animation: {
         'shake': 'shake 0.6s cubic-bezier(.36,.07,.19,.97) both',
         'jump': 'jump .5s both',

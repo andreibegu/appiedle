@@ -11,10 +11,10 @@ export default function ShareMenu({ gameState, price }: ShareProps) {
     return (
         <div className="inline-flex">
             <div className="inline-flex items-center">
-                <div className="w-0 h-0 border-t-[20px] border-t-transparent border-r-[20px] border-r-blue-500 border-b-[20px] border-b-transparent relative">
+                <div className="w-0 h-0 border-t-[20px] border-t-transparent border-r-[20px] border-r-appie-500 border-b-[20px] border-b-transparent relative">
                     <div className="absolute transform translate-x-3/4 -translate-y-1/2 w-3 h-3 bg-white rounded-full"></div>
                 </div>
-                <div className="bg-blue-500 px-4 py-2 text-white font-bold">{price} €</div>
+                <div className="bg-appie-500 px-4 py-2 text-white font-bold">{price} €</div>
             </div>
             <Button
                 onClick={async () => await handleShare(gameState)}
