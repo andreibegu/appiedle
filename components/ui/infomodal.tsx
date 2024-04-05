@@ -25,7 +25,7 @@ export default function InfoModal() {
                     </Link>
                 </div>
                 <div className="flex flex-col gap-2 text-justify pt-2">
-                    <p>Appiedle is a Wordle-style game where your goal is to guess the price of a random product from the Albert Heijn catalogue. Every day, a new game is live for you to try your grocery-shopping knowledge with. Products can be from any category as long as they are in the AH or Etos product catalogue! </p>
+                    <p>Appiedle is a Wordle-style game where your goal is to guess the price of a random product from the Albert Heijn catalogue. Every day, a new game is live for you to try your grocery-shopping knowledge with.</p>
                     <h2 className="text-xl font-bold text-gray-900">How to play</h2>
                     <p>You have 6 price guesses, if you get the correct price within them, you win! Each time you guess a price, an indicator of how close you are will show.</p>
                     <div className="inline-flex gap-3 items-center">
