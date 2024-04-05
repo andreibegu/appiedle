@@ -29,15 +29,15 @@ export default function InfoModal() {
                     <h2 className="text-xl font-bold text-gray-900">How to play</h2>
                     <p>You have 6 price guesses, if you get the correct price within them, you win! Each time you guess a price, an indicator of how close you are will show.</p>
                     <div className="inline-flex gap-3 items-center">
-                        <GuessIndicator closeness="close" direction="up" /><p>You're <b>close</b>, but not quite there.</p>
+                        <GuessIndicator closeness="close" direction="up" /><p>You&#x27;re <b>close</b>, but not quite there.</p>
                     </div>
                     <div className="inline-flex gap-3 items-center">
-                        <GuessIndicator closeness="far" direction="up" /><p>You're pretty <b>far</b> from the price.</p>
+                        <GuessIndicator closeness="far" direction="up" /><p>You&#x27;re pretty <b>far</b> from the price.</p>
                     </div>
                     <div className="inline-flex gap-3 items-center">
-                        <GuessIndicator closeness="win" direction="none" /><p>You're basically <b>spot on</b> the price.</p>
+                        <GuessIndicator closeness="win" direction="none" /><p>You&#x27;re basically <b>spot on</b> the price.</p>
                     </div>
-                    <p>After you figure the price out (or unfortunately run out of guesses), you'll get the real price of the product as well as a button to share your game with your friends.</p>
+                    <p>After you figure the price out (or unfortunately run out of guesses), you&#x27;ll get the real price of the product as well as a button to share your game with your friends.</p>
                     <h2 className="text-xl font-bold text-gray-900">Enjoy the game!</h2>
                     <p>You may want to check out the <a href="https://github.com/andreibegu/appiedle" className="text-appie-500 underline decoration-dashed">source code</a> of this project, or, if kind enough, <a href="https://www.paypal.com/paypalme/andreibegu" className="text-appie-500 underline decoration-dashed">donate</a> in order to keep it running.</p>
                 </div>
