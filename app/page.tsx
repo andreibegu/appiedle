@@ -12,7 +12,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
   const showInfo = searchParams?.showInfo;
 
   return (
-    <main className="flex flex-col flex-1 h-full justify-center items-center gap-5">
+    <main className="flex flex-col flex-1 h-full justify-center items-center gap-5 my-5">
       {showInfo && <InfoModal />}
       <Item product={product} />
       <Game id={await getCurrentGame()} price={product.price} />
