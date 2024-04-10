@@ -29,7 +29,7 @@ export default function InfoModal() {
                     <p className="block md:hidden">Appiedle is a Wordle-style game where you guess the price of a random product from Albert Heijn. Every day, a new game is up for you to try your grocery knowledge with.</p>
                     <h2 className="text-xl font-bold text-gray-900">How to play</h2>
                     <p className="block md:hidden">You have 6 price guesses, if you get the correct price within them, you win! Each time you guess a price, an indicator of how close you are will show.</p>
-                    <p className="hidden md:block">You have 6 price guesses, if you get the correct price within them, you win! Each time you guess a price, you'll see how close you are:</p>
+                    <p className="hidden md:block">You have 6 price guesses, if you get the correct price within them, you win! Each time you guess a price, you&#x27;ll see how close you are:</p>
                     <div className="inline-flex gap-3 items-center">
                         <GuessIndicator closeness="close" direction="up" /><p>You&#x27;re <b>close</b>, but not quite there.</p>
                     </div>
