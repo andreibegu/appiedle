@@ -25,9 +25,11 @@ export default function InfoModal() {
                     </Link>
                 </div>
                 <div className="flex flex-col gap-2 text-justify pt-2">
-                    <p>Appiedle is a Wordle-style game where your goal is to guess the price of a random product from the Albert Heijn catalogue. Every day, a new game is live for you to try your grocery-shopping knowledge with.</p>
+                    <p className="hidden md:block">Appiedle is a Wordle-style game where your goal is to guess the price of a random product from the Albert Heijn catalogue. Every day, a new game is live for you to try your grocery-shopping knowledge with.</p>
+                    <p className="block md:hidden">Appiedle is a Wordle-style game where you guess the price of a random product from Albert Heijn. Every day, a new game is up for you to try your grocery knowledge with.</p>
                     <h2 className="text-xl font-bold text-gray-900">How to play</h2>
-                    <p>You have 6 price guesses, if you get the correct price within them, you win! Each time you guess a price, an indicator of how close you are will show.</p>
+                    <p className="block md:hidden">You have 6 price guesses, if you get the correct price within them, you win! Each time you guess a price, an indicator of how close you are will show.</p>
+                    <p className="hidden md:block">You have 6 price guesses, if you get the correct price within them, you win! Each time you guess a price, you'll see how close you are:</p>
                     <div className="inline-flex gap-3 items-center">
                         <GuessIndicator closeness="close" direction="up" /><p>You&#x27;re <b>close</b>, but not quite there.</p>
                     </div>
@@ -37,7 +39,8 @@ export default function InfoModal() {
                     <div className="inline-flex gap-3 items-center">
                         <GuessIndicator closeness="win" direction="none" /><p>You&#x27;re basically <b>spot on</b> the price.</p>
                     </div>
-                    <p>After you figure the price out (or unfortunately run out of guesses), you&#x27;ll get the real price of the product as well as a button to share your game with your friends.</p>
+                    <p className="hidden md:block">After you figure the price out (or unfortunately run out of guesses), you&#x27;ll get the real price of the product as well as a button to share your game with your friends.</p>
+                    <p className="block md:hidden">After you figure the price out (or run out of guesses), you&#x27;ll get the real price of the product as well as a button to share your game with your friends.</p>
                     <h2 className="text-xl font-bold text-gray-900">Enjoy the game!</h2>
                     <p>You may want to check out the <a href="https://github.com/andreibegu/appiedle" className="text-appie-500 underline decoration-dashed">source code</a> of this project, or, if kind enough, <a href="https://www.paypal.com/paypalme/andreibegu" className="text-appie-500 underline decoration-dashed">donate</a> in order to keep it running.</p>
                 </div>
